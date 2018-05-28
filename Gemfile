@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #rest request gem
 gem 'rest-client'
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'

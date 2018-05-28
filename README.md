@@ -7,3 +7,5 @@ It is also found here on https://github.com/christphrd/PlaceMe
 This version uses Postgres database.
 
 Live Demo: https://placemeapp.herokuapp.com/
+
+Video: https://youtu.be/lc_wSi2LdAw

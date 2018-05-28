@@ -1,24 +1,7 @@
-# README
+I collaborated with Rick Nilon during Flatiron School.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The original version of PlaceMe is found on https://github.com/allinthemind66/PlaceMe
 
-Things you may want to cover:
+It is also found here on https://github.com/christphrd/PlaceMe
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This version uses Postgres database.

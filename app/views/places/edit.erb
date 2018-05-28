@@ -1,0 +1,15 @@
+<div class="image_control">
+  <img src="<%= @place.photos[0][:url] %>" alt=""/>
+</div>
+
+<%= form_tag({controller: 'places', action: 'update', method: 'put'}) do %>
+  <h1><%= link_to @place.city, place_path(@place) %></h1>
+  <h1><%= @place.country %> - <%= @place.continent %></h1>
+  <span class="checkbox">
+  <p><%= check_box_tag :future %>Haven't Been There Yet<p>
+</span>
+  <%= hidden_field_tag :place_id, @place.id %>
+  <%= submit_tag "Update", :class=>"btn btn-primary" %>
+<% end %><br>
+
+<%= button_to "Delete from Your List", {:controller => :places, :action => 'destroy'}, :method => :delete, params: { place_id: @place.id }, :class=>"btn btn-danger", data: {confirm: "Are you sure?"}  %>

@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PlaceMeApp</title>
+    <title>PlaceMe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="/">PlaceMe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/places">Places</a>
+          </li>
+          <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+            <div class="col-xs-4">
+              <input class="form-control mr-sm-2" type="search" placeholder="Country or Continent" aria-label="Search" name="q">
+            </div>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search (Case Sensitive)</button>
+          </form>
+        <div class="logout">
+          <% if logged_in?%>
+          <%= button_to "Log out", logout_path, :method => :delete, :class => "btn btn-warning" %>
+          <% @user = User.find(session[:user_id]) %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+  </head>
+  <div class="center">
     <%= yield %>
+
+  </div>
+  <div class="footer_bottom">
+    <footer><div class="table-grid__cell table-grid__cell--nowrap">Made with <span class="red">&hearts;</span> by <strong><a href="http://flatironschool.com/" target="_blank">Flatiron School</a> Students</strong> Christopher Diep and Rick Nilon </div></footer>
+  </div>
   </body>
 </html>

@@ -1,0 +1,64 @@
+// Place all the styles related to the Places controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+a {
+  text-decoration: none;
+ font-weight: bold;
+ color: black;
+}
+
+a:hover {
+  color: MediumSeaGreen ;
+  text-decoration: none;
+}
+
+.form {
+  margin-top: 20%;
+}
+
+body div.been_to {
+  text-align: center;
+
+  float: left;
+}
+
+body div.will_go {
+  text-align: center;
+  // float: left;
+}
+
+.comments {
+  text-align: center;
+}
+.place_header {
+  display: block;
+}
+
+.card {
+  width: 25%;
+  display: inline-block;
+}
+
+.checkbox {
+  font-weight: bold;
+  font-size: 120%;
+
+}
+
+.space {
+  padding: 4px;
+  overflow: none;
+}
+
+body.div.all_places {
+  margin-top: 3em;
+  margin-left: 50%;
+}
+
+.show_been_to {
+  text-align: center;
+  margin-left: 22%;
+  float: left;
+}

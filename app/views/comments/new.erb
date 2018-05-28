@@ -1,0 +1,9 @@
+<div class="add_comment form-group">
+  <h1>Enter Your Comment!!</h1>
+  <%= form_for @comment do |f| %>
+  <%= f.text_area :content, size: "60x12", :class => "form-control" %>
+  <%= f.hidden_field(:place_id, value: @place) %>
+  <br>
+  <%= f.submit "Add Comment", :class => "btn btn-primary" %>
+  <% end %>
+</div>

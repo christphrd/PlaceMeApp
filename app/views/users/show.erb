@@ -1,0 +1,31 @@
+<h1><%= @user.full_name %></h1>
+
+<h2>About</h2>
+
+<%= @user.bio %>
+
+<div class="all_places">
+  <div class="been_to">
+    <h2>Places I've Visited And Lived!</h2>
+    <% @user.visited_places.each do |place| %>
+    <ul>
+      <li>
+        <%= link_to "#{place.city}", place_path(place) %>
+
+      </li>
+    </ul>
+    <% end %>
+
+  </div>
+
+  <div class="will_go">
+    <h2>Places I will Go To Someday</h2>
+    <% @user.will_go_to_someday.each do |place| %>
+    <ul>
+      <li>
+        <%= link_to "#{place.city}", place_path(place) %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</div>

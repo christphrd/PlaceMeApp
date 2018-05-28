@@ -1,0 +1,64 @@
+<div class="image_control">
+  <img src="<%= @place.photos[0][:url] %>" alt=""/>
+</div>
+<h1><%= @place.city %></h1>
+<span class="place_header">
+
+  <h1><%= @place.country %> - <%= @place.continent %></h1>
+
+</span>
+
+<% if !UserPlace.find_by(user_id: session[:user_id], place_id: @place.id) %>
+<%= link_to "Add #{@place.city_and_country}", "/places/add/#{@place.id}", :class => "btn btn-primary add_btn" %>
+<% end %>
+
+
+<div class="all_places">
+
+  <div class="show_been_to">
+    <h4>People Who Have Been Here</h4>
+    <% @place.people_who_been.each do |user| %>
+    <ul>
+      <li>
+        <%= link_to "#{user.full_name}", user_path(user) %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+
+
+  <div class="will_go">
+    <h4>People Who Will Go Here Someday</h4>
+    <% @place.people_wishlist.each do |user| %>
+    <ul>
+      <li>
+        <%= link_to "#{user.full_name}", user_path(user) %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+  <div class="spacer" style="clear: both;"></div>
+</div>
+
+<br>
+
+
+<h3><%= link_to "Leave A Comment On This Place", {:controller => "comments", :action => "new", :place => @place}%></h3>
+<br>
+<br>
+<span class="comments">
+
+  <h4>Most Recent Comments:</h4>
+  <% @place_comments.each do |comment| %>
+  <% @user = User.find(comment.user_id) %>
+  <div class="card">
+    <p><%= link_to @user.full_name, user_path(@user) %> says:</p>
+    <p><%= comment.content %></p>
+    <p><%= comment.updated_in_day_date_est_time  %></p>
+  </div>
+  <br>
+  <% end %>
+</span>
+
+
+<br>

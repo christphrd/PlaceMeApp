@@ -1,0 +1,9 @@
+<div class="add_comment form-group">
+  <h1>Biography</h1>
+  <h6>Where did you grow up? Tell us your story</h6>
+
+  <%= form_for @user do |f| %>
+    <%= f.text_area :bio, size: "60x12", :class => "form-control" %><br>
+    <%= f.submit "Submit", :class => "btn btn-primary" %>
+  <% end %>
+</div>

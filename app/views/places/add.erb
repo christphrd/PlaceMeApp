@@ -1,0 +1,12 @@
+<div class="image_control">
+  <img src="<%= @place.photos[0][:url] %>" alt=""/>
+</div>
+<h1><%= @place.city %></h1>
+<span class="place_header">
+
+  <h1><%= @place.country %> - <%= @place.continent %></h1>
+  <%= form_tag(controller: 'places', action: 'added', method: 'post') %>
+  <span class="checkbox">
+  <p><%= check_box_tag :future %>Haven't Been There Yet<p>
+  </span><%= submit_tag "Add to Your List", :class => "btn btn-primary" %>
+</span>

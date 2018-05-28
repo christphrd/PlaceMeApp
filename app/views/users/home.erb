@@ -1,0 +1,37 @@
+<h1>Welcome <%= @user.full_name %></h1>
+<%#= button_to "Log out", logout_path, :method => :delete %>
+<h2>Tell us about yourself</h2>
+
+<%= link_to "Biography", edit_user_path, :class => "btn btn-primary add_btn" %><br>
+
+<%= @user.bio %>
+
+<p><h2>Add Places You Have Lived, Visited And Want To Go!</h2></p>
+
+<%= link_to "Add Places", new_place_path, :class => "btn btn-primary add_btn" %>
+
+<div class="all_places">
+<div class="been_to">
+  <h2>Places You've Visited And Lived!</h2>
+  <% @user.visited_places.each do |place| %>
+  <ul>
+    <li>
+      <%= link_to "#{place.city}", place_path(place) %>
+      <%= link_to "- Edit", edit_place_path(:place_id => place) %>
+    </li>
+  </ul>
+  <% end %>
+</div>
+
+<div class="will_go">
+  <h2>Places You Will Go To Someday</h2>
+  <% @user.will_go_to_someday.each do |place| %>
+  <ul>
+    <li>
+      <%= link_to "#{place.city}", place_path(place) %>
+      <%= link_to "- Edit", edit_place_path(:place_id => place) %>
+    </li>
+  </ul>
+  <% end %>
+</div>
+</div>

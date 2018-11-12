@@ -72,3 +72,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 #email validation gem
 gem "valid_email2"
+
+#generate relationship diagrams for rails apps
+gem 'rails-erd'
+
+#updated for security
+gem "loofah", ">= 2.2.3"
